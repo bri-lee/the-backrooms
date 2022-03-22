@@ -42,4 +42,9 @@ public class TriggerHandler : MonoBehaviour
 
         Debug.Log("Inside IEnumerator");
     }
+
+    void changeTextInBox(string message)
+    {
+        DialogueBox.text = message;
+    }
 }
