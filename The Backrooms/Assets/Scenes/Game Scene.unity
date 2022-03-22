@@ -1631,3 +1631,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueBox: {fileID: 1326115701}
+  timeForDialogue: 3
