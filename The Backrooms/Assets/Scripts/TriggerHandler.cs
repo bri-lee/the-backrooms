@@ -18,19 +18,13 @@ public class TriggerHandler : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided");
-
         if (other.CompareTag("Player"))
         {
             DialogueBox.enabled = true;
 
-            Debug.Log("Tag Compared");
-
             // wait 3 seconds
 
             StartCoroutine(Stopwatch(timeForDialogue));
-
-            Debug.Log("After Stopwatch");
         }
     }
 
@@ -39,8 +33,6 @@ public class TriggerHandler : MonoBehaviour
         yield return new WaitForSeconds(num);
 
         DialogueBox.enabled = false;
-
-        Debug.Log("Inside IEnumerator");
     }
 
     void changeTextInBox(string message)
