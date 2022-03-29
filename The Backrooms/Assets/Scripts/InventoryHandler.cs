@@ -8,10 +8,21 @@ public class InventoryHandler : MonoBehaviour
     private Dictionary<InventoryItemData, InventoryItem> m_itemDictionary;
     public List<InventoryItem> inventory { get; private set; }
 
+    public static InventoryHandler current { get; private set; }
+
     private void Awake()
     {
         inventory = new List<InventoryItem>();
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
+
+        if (current != null && current != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            current = this;
+        }
     }
 
     public void Add(InventoryItemData referenceData)
