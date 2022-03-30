@@ -7,6 +7,7 @@ public class ItemPickup : MonoBehaviour
     public InventoryItemData referenceItem;
     public GameObject item;
     public GameObject player;
+    public Camera camera;
 
     public void OnHandlePickupItem()
     {
@@ -28,8 +29,9 @@ public class ItemPickup : MonoBehaviour
     {
         RaycastHit hit;
 
-        // get vector3 for where player is looking
         Vector3 direction = Vector3.forward;
+
+        direction = camera.WorldToScreenPoint(player.transform.position);
 
         if (Input.GetKey("e"))
         {
